@@ -1,0 +1,49 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                   controllers.Application.index
+
+OPTIONS     /*all            controllers.StudentController.preflight(all)
+
+# Employee related routes
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file                       controllers.Assets.versioned(path="/public", file: Asset)
+
+
+GET     /university/list                    controllers.UniversityController.list
+
+POST     /university/create                   controllers.UniversityController.create
+
+PUT     /university/update                    controllers.UniversityController.update
+
+GET     /university/getby/:id                    controllers.UniversityController.getById(id:Int)
+
+DELETE     /university/delete/:id                   controllers.UniversityController.delete(id:Int)
+
+
+GET     /student/list                    controllers.StudentController.list
+
+POST     /student/create                   controllers.StudentController.create
+
+PUT     /student/update                    controllers.StudentController.update
+
+GET     /student/getby/:id                    controllers.StudentController.getById(id:Int)
+
+DELETE     /student/delete/:id                   controllers.StudentController.delete(id:Int)
+
+
+
+GET     /user/list                    controllers.UserCredentialController.list
+
+POST     /user/create                   controllers.UserCredentialController.create
+
+PUT     /user/update                    controllers.UserCredentialController.update
+
+GET     /user/getby/:id                    controllers.UserCredentialController.getById(id:String)
+
+DELETE     /user/delete/:id                   controllers.UserCredentialController.delete(id:String)
+
+POST         /user/validate                     controllers.UserCredentialController.validate
